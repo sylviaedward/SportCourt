@@ -1,0 +1,1 @@
+ALTER TABLE tb_post MODIFY COLUMN content TEXT NOT NULL;

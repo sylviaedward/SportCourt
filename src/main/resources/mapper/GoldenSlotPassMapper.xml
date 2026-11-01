@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportcourt.mapper.GoldenSlotPassMapper">
+
+    <resultMap id="GoldenSlotPublicationMap" type="com.sportcourt.entity.GoldenSlotPublication">
+        <result column="booking_pass_id" property="bookingPassId"/>
+        <result column="stock" property="stock"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <select id="selectPublicationStates" resultType="map">
+        SELECT sv.booking_pass_id,a.has_published
+        FROM tb_golden_slot_booking_pass sv
+        LEFT JOIN tb_golden_slot_activity a ON a.booking_pass_id=sv.booking_pass_id
+    </select>
+
+    <update id="markPublished">
+        UPDATE tb_golden_slot_activity
+        SET has_published=1
+        WHERE booking_pass_id=#{bookingPassId}
+    </update>
+
+    <select id="selectPublicationDetails" resultMap="GoldenSlotPublicationMap">
+        SELECT sv.*,v.status+0 AS status
+        FROM tb_golden_slot_booking_pass sv
+        JOIN tb_booking_pass v ON v.id=sv.booking_pass_id
+        WHERE sv.booking_pass_id=#{bookingPassId}
+    </select>
+
+    <select id="selectPublishedFlag" resultType="Integer">
+        SELECT has_published
+        FROM tb_golden_slot_activity
+        WHERE booking_pass_id=#{bookingPassId}
+    </select>
+
+    <select id="selectInventory" resultType="map">
+        SELECT a.total_stock,s.stock
+        FROM tb_golden_slot_activity a
+        JOIN tb_golden_slot_booking_pass s USING(booking_pass_id)
+        WHERE booking_pass_id=#{bookingPassId}
+    </select>
+
+    <select id="selectActivityBookingPassIds" resultType="Long">
+        SELECT booking_pass_id
+        FROM tb_golden_slot_activity
+    </select>
+
+    <insert id="insertActivity">
+        INSERT INTO tb_golden_slot_activity(booking_pass_id,total_stock)
+        VALUES(#{bookingPassId},#{totalStock})
+    </insert>
+</mapper>

@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Local credentials and generated frontend dependencies
+.env
+.env.*
+!.env.example
+frontend/node_modules/
+.DS_Store

@@ -1,0 +1,6 @@
+.env
+app.jar
+sportcourt.sql
+frontend/
+images/
+*.tar.gz

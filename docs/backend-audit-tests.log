@@ -1,0 +1,48 @@
+[INFO] Compiling 129 source files with javac [debug parameters release 8] to target/classes
+[INFO] Compiling 24 source files with javac [debug parameters release 8] to target/test-classes
+[INFO] Running com.sportcourt.cache.CacheLayersIntegrationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.053 s - in com.sportcourt.cache.CacheLayersIntegrationTest
+[INFO] Running com.sportcourt.cache.CanalBatchTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.387 s - in com.sportcourt.cache.CanalBatchTest
+[INFO] Running com.sportcourt.cache.RequestCacheScopeTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in com.sportcourt.cache.RequestCacheScopeTest
+[INFO] Running com.sportcourt.cache.CacheBenchmarkIntegrationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.711 s - in com.sportcourt.cache.CacheBenchmarkIntegrationTest
+[INFO] Running com.sportcourt.cache.CacheChangeProjectorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s - in com.sportcourt.cache.CacheChangeProjectorTest
+[INFO] Running com.sportcourt.cache.CacheCdcIntegrationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.752 s - in com.sportcourt.cache.CacheCdcIntegrationTest
+[INFO] Running com.sportcourt.UserLogoutTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s - in com.sportcourt.UserLogoutTest
+[INFO] Running com.sportcourt.VenueCacheCompatibilityTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.sportcourt.VenueCacheCompatibilityTest
+[INFO] Running com.sportcourt.reliability.ReliabilityIntegrationTest
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.759 s - in com.sportcourt.reliability.ReliabilityIntegrationTest
+[INFO] Running com.sportcourt.reliability.GoldenSlotMessageTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in com.sportcourt.reliability.GoldenSlotMessageTest
+[INFO] Running com.sportcourt.reliability.LoginCodeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.sportcourt.reliability.LoginCodeTest
+[INFO] Running com.sportcourt.reliability.CacheConcurrencyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.015 s - in com.sportcourt.reliability.CacheConcurrencyTest
+[INFO] Running com.sportcourt.reliability.AccessGuardTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.sportcourt.reliability.AccessGuardTest
+[INFO] Running com.sportcourt.MapperArchitectureTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 s - in com.sportcourt.MapperArchitectureTest
+[INFO] Running com.sportcourt.ReservationOrderReliabilityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 s - in com.sportcourt.ReservationOrderReliabilityTest
+[INFO] Running com.sportcourt.MockPaymentTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.sportcourt.MockPaymentTest
+[INFO] Running com.sportcourt.VenueSearchBoundaryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.sportcourt.VenueSearchBoundaryTest
+[INFO] Running com.sportcourt.messaging.MessagingIntegrationTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.709 s - in com.sportcourt.messaging.MessagingIntegrationTest
+[INFO] Running com.sportcourt.messaging.RocketMqIntegrationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.5 s - in com.sportcourt.messaging.RocketMqIntegrationTest
+[INFO] Running com.sportcourt.analytics.KafkaBehaviorIntegrationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.227 s - in com.sportcourt.analytics.KafkaBehaviorIntegrationTest
+[INFO] Running com.sportcourt.analytics.BehaviorAggregationIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.018 s - in com.sportcourt.analytics.BehaviorAggregationIntegrationTest
+[INFO] Tests run: 77, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  01:10 min
+[INFO] Finished at: 2026-10-10T14:48:51Z

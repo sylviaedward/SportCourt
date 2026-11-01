@@ -1,0 +1,205 @@
+{
+  "generatedAt": "2026-10-10T15:13:58.466556+00:00",
+  "scope": "隔离数据库 sportcourt_optimization_test，完整回归命令一次通过；不等同于访客点击页面运行全部测试",
+  "tests": 90,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "suites": [
+    {
+      "name": "com.sportcourt.MapperArchitectureTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.MockPaymentTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.VenueCacheCompatibilityTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.VenueSearchBoundaryTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.UserLogoutTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.ReservationOrderReliabilityTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.analytics.BehaviorAggregationIntegrationTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.analytics.KafkaBehaviorIntegrationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.CacheBenchmarkIntegrationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.CacheCdcIntegrationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.CacheChangeProjectorTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.CacheLayersIntegrationTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.CacheReadTraceTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.CanalBatchTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.cache.RequestCacheScopeTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.experience.ExperienceIntegrationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.experience.ExperienceServiceTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.messaging.MessagingIntegrationTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.messaging.RocketMqIntegrationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.reliability.AccessGuardTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.reliability.CacheConcurrencyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.reliability.LoginCodeTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.reliability.ReliabilityIntegrationTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sportcourt.reliability.GoldenSlotMessageTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "checkstylePassed": true,
+  "checkstyleSkipped": false,
+  "frontendTests": 12,
+  "browserObservations": {
+    "cache": {
+      "requests": 3,
+      "reads": 6,
+      "scopeHits": 3,
+      "mysqlLoads": 0,
+      "observedLayers": [
+        "Redis",
+        "Caffeine",
+        "请求内缓存"
+      ]
+    },
+    "kafka": {
+      "submitted": 3,
+      "persisted": 3,
+      "pvBefore": 6,
+      "pvAfterRefresh": 9,
+      "loggedUv": 0
+    },
+    "order": "新接口的订单归属及 Outbox 查询在隔离 HTTP 测试通过；当前匿名页面未提交业务订单",
+    "screenshot": "frontend/design/experience-live.jpg"
+  },
+  "reproduction": "docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml run --rm test",
+  "googleJavaFormatPassed": true
+}

@@ -2,10 +2,10 @@ server:
   port: 8081
 spring:
   application:
-    name: hmdp
+    name: sportcourt
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/hmdp?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/sportcourt?useSSL=false&serverTimezone=UTC
     username: root
     password: 123
   redis:
@@ -18,12 +18,74 @@ spring:
         max-idle: 10
         min-idle: 1
         time-between-eviction-runs: 10s
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: 0
   jackson:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
 mybatis-plus:
-  type-aliases-package: com.hmdp.entity # 别名扫描包
+  type-aliases-package: com.sportcourt.entity # 别名扫描包
 logging:
   level:
-    com.hmdp: debug
+    com.sportcourt: debug
   pattern:
     dateformat: mm:ss.SSS
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+        sportcourt.goldenSlot.consume: true
+        sportcourt.cdc.event.delay: true
+        sportcourt.mq.consume: true
+        sportcourt.mq.send: true
+        sportcourt.kafka.event.delay: true
+  endpoint:
+    health:
+      show-details: never
+sportcourt:
+  reliability:
+    scheduling-enabled: true
+    max-deliveries: 5
+    claim-idle-ms: 30000
+    order-timeout-minutes: 30
+  experience:
+    enabled: ${SPORTCOURT_EXPERIENCE_ENABLED:false}
+  analytics:
+    enabled: ${SPORTCOURT_ANALYTICS_ENABLED:false}
+    bootstrap-servers: ${SPORTCOURT_KAFKA_SERVERS:127.0.0.1:9092}
+    topic: SportCourtVenueBehavior
+    group: ${SPORTCOURT_KAFKA_GROUP:sportcourt-heat-v1}
+  mq:
+    enabled: ${SPORTCOURT_MQ_ENABLED:false}
+    goldenSlot-enabled: ${SPORTCOURT_MQ_GOLDEN_SLOT_ENABLED:false}
+    nameserver: ${SPORTCOURT_MQ_NAMESERVER:127.0.0.1:9876}
+    group-prefix: ${SPORTCOURT_MQ_GROUP_PREFIX:sportcourt}
+    business-topic: SportCourtBusiness
+    deadline-topic: SportCourtOrderDeadline
+    consumer-enabled: true
+    lease-seconds: 60
+    relay-batch-size: 20
+    send-timeout-ms: 3000
+  monitor-token: ${SPORTCOURT_MONITOR_TOKEN:}
+  cache:
+    enabled: true
+  memcache:
+    enabled: ${SPORTCOURT_MEMCACHE_ENABLED:false}
+    host: ${SPORTCOURT_MEMCACHE_HOST:127.0.0.1}
+    port: ${SPORTCOURT_MEMCACHE_PORT:11211}
+    timeout-ms: 100
+  cdc:
+    enabled: ${SPORTCOURT_CDC_ENABLED:false}
+    host: ${SPORTCOURT_CDC_HOST:127.0.0.1}
+    port: ${SPORTCOURT_CDC_PORT:11111}
+    schema: ${SPORTCOURT_CDC_SCHEMA:sportcourt}
+    destination: ${SPORTCOURT_CDC_DESTINATION:example}

@@ -1,0 +1,28 @@
+package com.sportcourt.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.sportcourt.dto.LoginFormDTO;
+import com.sportcourt.dto.Result;
+import com.sportcourt.entity.User;
+import javax.servlet.http.HttpSession;
+
+/**
+ * 服务类
+ *
+ * @author 虎哥
+ * @since 2021-12-22
+ */
+public interface IUserService extends IService<User> {
+
+  Result sendCode(String phone, HttpSession session);
+
+  Result login(LoginFormDTO loginForm, HttpSession session);
+
+  Result signInToday();
+
+  Result queryCurrentMonthConsecutiveSignInDays();
+
+  Result logout(String token);
+
+  Result queryUserById(Long userId);
+}
