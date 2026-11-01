@@ -115,7 +115,8 @@ cd frontend && npm run check && npm test
 # 依赖服务、Flyway、Canal、RocketMQ、Kafka 与 27 个 Java 测试类
 cd ..
 docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml up -d --pull never mysql redis memcached canal mq-init kafka-init
-docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml run --rm --pull never test
+docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml run --rm --pull never test \
+  mvn -B -DforkCount=0 -DreuseForks=false -Dspring.test.context.cache.maxSize=2 clean package
 ```
 
 当前发布验证结果：前端 12/12 通过；Java 隔离 `mvn clean package` 覆盖 27 个测试类、97/97 通过，失败 0、错误 0、跳过 0；Maven Checkstyle 0 违规；完整业务 Compose 的核心服务可健康启动。测试完成后可用 `docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml down -v` 清理临时测试卷，不影响业务环境。
