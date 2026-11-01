@@ -118,7 +118,7 @@ docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml up
 docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml run --rm --pull never test
 ```
 
-当前发布验证结果：前端 12/12 通过；Java 隔离集成套件 91/91 通过，失败 0、错误 0、跳过 0；Maven Checkstyle 0 违规；完整业务 Compose 的核心服务健康。测试完成后可用 `docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml down -v` 清理临时测试卷，不影响业务环境。
+当前发布验证结果：前端 12/12 通过；Java 隔离 `mvn clean package` 覆盖 27 个测试类、97/97 通过，失败 0、错误 0、跳过 0；Maven Checkstyle 0 违规；完整业务 Compose 的核心服务可健康启动。测试完成后可用 `docker compose -p sportcourt-optimization-test -f dev/docker-compose.test.yml down -v` 清理临时测试卷，不影响业务环境。
 
 ## 登录、配置与页面体验
 
